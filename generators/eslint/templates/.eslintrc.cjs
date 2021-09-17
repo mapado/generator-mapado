@@ -61,4 +61,30 @@ module.exports = {
     // https://eslint.org/docs/rules/no-use-before-define
     'no-use-before-define': 'off',
   },
+
+  ignorePatterns: ['dist/'],
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+    },
+    {
+      files: ['**/*.js', '**/*.jsx'],
+      rules: {
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'react/static-property-placement': ['error', 'property assignment'],
+      },
+    },
+    {
+      files: [
+        'setup_tests.js',
+        '*.test.js',
+        '*.test.ts',
+        '**/__mocks__/*.js',
+        '**/__mocks__/*.ts',
+      ],
+      env: { jest: true },
+    },
+  ],
 };

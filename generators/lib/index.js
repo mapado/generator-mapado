@@ -67,12 +67,4 @@ module.exports = class extends Generator {
     this.spawnCommand('npx', ['-y', 'sort-package-json']);
     this.spawnCommand('yarn', ['install']);
   }
-
-  method1() {
-    this.log('app name', this.answers.name);
-  }
-
-  method2() {
-    this.log('cool feature', this.answers.cool);
-  }
 };

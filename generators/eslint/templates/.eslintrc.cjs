@@ -62,6 +62,14 @@ module.exports = {
     'no-use-before-define': 'off',
   },
 
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
+
   ignorePatterns: ['dist/'],
   overrides: [
     {

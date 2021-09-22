@@ -52,6 +52,7 @@ module.exports = class extends Generator {
 
       scripts: {
         lint: 'run-p lint:*',
+        prepublishOnly: "run-s lint build",
       },
     };
 

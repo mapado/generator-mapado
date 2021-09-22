@@ -25,5 +25,8 @@ export default defineConfig({
       babelHelpers: 'bundled',
     }),
   ],
-  external: Object.keys(pkg.peerDependencies || {}),
+  external: [
+    ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.keys(pkg.dependencies || {}),
+  ],
 });

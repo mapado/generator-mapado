@@ -38,7 +38,7 @@ module.exports = class extends Generator {
   addBuildScript() {
     const pkgJson = {
       scripts: {
-        build: 'rollup --config',
+        'build:module': 'rollup --config',
       },
       main: 'dist/index.js',
       exports: {

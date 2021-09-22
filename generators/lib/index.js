@@ -51,6 +51,7 @@ module.exports = class extends Generator {
       },
 
       scripts: {
+        build: 'run-p build:*',
         lint: 'run-p lint:*',
         prepublishOnly: "run-s lint build",
       },
@@ -67,5 +68,15 @@ module.exports = class extends Generator {
     this.fs.delete(this.destinationPath('package-lock.json'));
     this.spawnCommand('npx', ['-y', 'sort-package-json']);
     this.spawnCommand('yarn', ['install']);
+  }
+  
+  writing() {
+    this.fs.copyTpl(
+      this.templatePath('CHANGELOG.md'),
+      this.destinationPath('CHANGELOG.md'),
+      {
+        version: this.answers.version,
+      }
+    );
   }
 };

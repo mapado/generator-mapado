@@ -8,6 +8,7 @@ module.exports = class extends Generator {
   addBuildScript() {
     const pkgJson = {
       scripts: {
+        'build:types': 'tsc --emitDeclarationOnly',
         'lint:types': 'tsc --noEmit',
       },
       types: 'dist/types/index.d.ts',

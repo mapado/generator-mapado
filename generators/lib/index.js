@@ -72,6 +72,11 @@ module.exports = class extends Generator {
   
   writing() {
     this.fs.copyTpl(
+      this.templatePath('.gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.copyTpl(
       this.templatePath('CHANGELOG.md'),
       this.destinationPath('CHANGELOG.md'),
       {

@@ -31,6 +31,10 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
 
+    // Disallow JSX no bind
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
+    'react/jsx-no-bind': 'off',
+
     // === import extension overriden rules ===
     'import/extensions': [
       'error',
@@ -60,6 +64,28 @@ module.exports = {
     // Disallow Early Use
     // https://eslint.org/docs/rules/no-use-before-define
     'no-use-before-define': 'off',
+
+    // Allow padding line between statements
+    // https://eslint.org/docs/latest/rules/padding-line-between-statements
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: ['return', 'throw'] },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: ['const', 'let', 'var', 'function', 'class', 'block-like'],
+      },
+      {
+        blankLine: 'always',
+        prev: ['const', 'let', 'var', 'function', 'class', 'block-like'],
+        next: '*',
+      },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let', 'var'],
+        next: ['const', 'let', 'var'],
+      },
+    ],
   },
 
   settings: {

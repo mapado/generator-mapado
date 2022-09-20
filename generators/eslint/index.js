@@ -25,7 +25,7 @@ module.exports = class extends Generator {
   addBuildScript() {
     const pkgJson = {
       scripts: {
-        'lint:eslint': 'eslint .',
+        'lint:eslint': 'eslint . --fix',
       },
     };
 

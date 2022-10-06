@@ -15,7 +15,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath('.babelrc.cjs'),
-      this.destinationPath('src/babelrc.cjs')
+      this.destinationPath('src/.babelrc.cjs')
     );
   }
 };

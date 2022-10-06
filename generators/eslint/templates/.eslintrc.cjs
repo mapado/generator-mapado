@@ -100,6 +100,10 @@ module.exports = {
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': ['error'],
+      },
     },
     {
       files: ['**/*.js', '**/*.jsx'],

@@ -1,6 +1,6 @@
 # Yeoman Mapado generator
 
-A [yeoman](https://yeoman.io/) generator to generate Mapado base skeleton for an library.
+A [yeoman](https://yeoman.io/) generator to generate Mapado base skeleton for a library.
 
 ### Usage
 

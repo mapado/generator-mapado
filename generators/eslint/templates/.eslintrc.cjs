@@ -47,6 +47,33 @@ module.exports = {
       },
     ],
 
+    // sort imports. see https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
+    // TLDR; sorted by : ['react', 'external packages', 'mapado packages', 'internal']
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc' },
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: '@mapado/**',
+            group: 'external',
+            position: 'after',
+          },
+          {
+            pattern: 'mapado-*',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+      },
+    ],
+
     // When there is only a single export from a module, prefer using default export over named export.
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',

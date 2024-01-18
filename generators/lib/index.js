@@ -67,6 +67,7 @@ module.exports = class extends Generator {
   installing() {
     this.fs.delete(this.destinationPath('package-lock.json'));
     this.spawnCommand('npx', ['-y', 'sort-package-json']);
+    this.spawnCommand('yarn', ['set', 'version', 'berry']);
     this.spawnCommand('yarn', ['install']);
   }
   
